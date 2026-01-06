@@ -16,7 +16,7 @@ import faiss
 import streamlit as st
 import requests
 import json
-import os
+
 #upload file
 
 def load_pdf(docs):
@@ -123,6 +123,7 @@ answer:"""
 
     # completion
 def generate_completion(prompt, model="gpt-4.1-nano"):
+    api_key="eu....................."# give the api key
     url = "https://api.euron.one/api/v1/euri/chat/completions"
     api_key="api_key"
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
