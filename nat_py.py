@@ -101,18 +101,18 @@ def retrieve(query, index, chunk_mapping, emb, k=3):
 
 def build_prompt(context_chunks, query):
   #
-  # Har chunk ko check karein agar dict hai to 'page_content', warna string ke taur pe use karein
+ 
   context_list = []
   for chunk in context_chunks:
     if isinstance(chunk, dict) and 'page_content' in chunk:
       context_list.append(chunk['page_content'])
     else:
-      # Agar chunk dict nahi ya key missing ho, to string representation use karein
+      
       context_list.append(str(chunk))
 
   context = "\n\n".join(context_list)
 
-  # Formatted prompt return karna
+ 
   return f"""use the following pieces of context to answer the question.
 if you don't know the answer just say that you don't know, don't try to make up an answer.
 and explain the answer of question in simple words.
