@@ -123,7 +123,7 @@ answer:"""
 
     # completion
 def generate_completion(prompt, model="gpt-4.1-nano"):
-    api_key="eu....................."# give the api key
+    api_key=st.secrets["EURI_API_KEY"]
     url = "https://api.euron.one/api/v1/euri/chat/completions"
     api_key="api_key"
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
